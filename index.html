@@ -51,7 +51,7 @@
                     <div class="tabs__pane tabs__pane_show">
                         <div class="place_input">
                             <p class="p_login">Email</p>
-                            <input type="mail">
+                            <input type="mail" name="mailcom">
                             <p class="p_login">Password</p>
                             <input type="password">
                             <button class="log_button">Log in</button>
@@ -234,6 +234,17 @@
 
 
     <script>
+        
+        $(".log_button").click(
+        function(){
+            var fieldValue = $('input[name="mailcom"]').val();
+            console.log(fieldValue);
+            
+        }
+        )
+        
+        
+        
         var minOffset = 1;
         window.onscroll = function() {
             let has_class = document.body.classList.contains("is_scrolled");
