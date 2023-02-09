@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #e6f4fd;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        main {
+            width: 500px;
+            margin: auto;
+        }
+
+        .ui-form {
+            max-width: 100%;
+            padding: 80px 30px 30px;
+            margin: 50px auto 30px;
+            background: white;
+        }
+
+        .ui-form h3 {
+            position: relative;
+            z-index: 5;
+            margin: 0 0 60px;
+            text-align: center;
+            color: #4a90e2;
+            font-size: 30px;
+            font-weight: normal;
+        }
+
+        .ui-form h3:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            left: 60px;
+            top: -30px;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: #fee8e4;
+        }
+
+        input::placeholder {
+            color: #397FB7;
+            font-size: 18px;
+        }
+
+        select {
+            color: #397FB7;
+            font-size: 18px;
+        }
+        
+        option {
+            color: #397FB7;
+            font-size: 15px;
+        }
+        
+        
+        
+        .form-row {
+            position: relative;
+            margin-bottom: 40px;
+        }
+
+        .form-row input {
+            display: block;
+            width: 100%;
+            padding: 0 10px;
+            line-height: 40px;
+            font-family: 'Roboto', sans-serif;
+            background: none;
+            border-width: 0;
+            border: 1px solid #E7F7FF;
+            transition: all 0.2s ease;
+        }
+        
+        .form-row select{
+            display: block;
+            width: 100%;
+            padding: 10px;
+            line-height: 40px;
+            font-family: 'Roboto', sans-serif;
+            background: none;
+            border-width: 0;
+            border: 1px solid #E7F7FF;
+            transition: all 0.2s ease;   
+            margin-top: 5px;
+        }
+
+        
+        
+        
+
+        .form-row label {
+            color: #005BA3;
+            font-weight: 300;
+            font-size: 14px;
+            transform: translateY(-35px);
+            transition: all 0.2s ease;
+        }
+
+        .form-row input:focus {
+            outline: 0;
+            border-color: #F77A52;
+        }
+
+        .form-row input:focus+label,
+        .form-row input:valid+label {
+            transform: translateY(-60px);
+            margin-left: -14px;
+            font-size: 14px;
+            font-weight: 400;
+            outline: 0;
+            border-color: #F77A52;
+            color: #F77A52;
+        }
+
+        .ui-form input[type="submit"] {
+            width: 100%;
+            padding: 0;
+            line-height: 42px;
+            background: #005BA3;
+            border-width: 0;
+            color: white;
+            font-size: 20px;
+        }
+
+        .nextStep{
+            width: 100%;
+            padding: 0;
+            line-height: 42px;
+            background: #005BA3;
+            border-width: 0;
+            color: white;
+            font-size: 1.2em;
+        }
+        
+        
+        .ui-form p {
+            margin: 0;
+            padding-top: 10px;
+        }
+
+
+
+   
+    </style>
+
+    <main>
+        <form class="ui-form" id="step1">
+            <div class="form-row first">
+                <input type="text" id="name" placeholder="Имя" required autocomplete="off">
+            </div>
+            <div class="form-row first">
+                <input type="phone" id="phone" placeholder="Телефон" required autocomplete="off">
+            </div>
+            <div class="form-row first">
+                <input type="text" id="email" placeholder="Email" required autocomplete="off">
+            </div>
+            
+             <div class="form-row sec" style="display: none">
+                <label for="phone">Укажите Ваше гражданство</label>
+                <select id="city" name="city" required autocomplete="off">
+                    <option value="New York" >New York</option>
+                    <option value="Los Angeles">Los Angeles</option>
+                    <option value="Chicago">Chicago</option>
+                    <option value="Houston">Houston</option>
+                </select>
+            </div>
+
+             <div class="form-row sec" style="display: none">
+                <label for="phone">Укажите Ваш возраст</label>
+                <select id="age"></select>
+            </div>
+
+            
+
+            <p><button type="button" class="nextStep first" onclick="showStep2()">Зарегистрироваться</button></p>
+            <p><input type="submit" value="Отправить" onclick="submitForm()" class="sec" style="display: none" ></p>
+        </form>
+
+<script>
+    
+     function showStep2() {
+                const stepFirst = document.querySelectorAll('.first');
+                stepFirst.forEach(element => {
+                  element.style.display = "none";
+                });
+         
+                const stepTwo = document.querySelectorAll('.sec');
+                stepTwo.forEach(element => {
+                  element.style.display = "block";
+                });
+            }
+
+    function submitForm() {
+
+                var city = document.getElementById("city").value;
+                var link = document.querySelector("#step1");
+                if (city == "Los Angeles") {
+                link.setAttribute("action", "google.com");
+                }
+                else {
+                link.setAttribute("action", "thanksPage.html");   
+                }
+    }
+
+    
+   let selectedOption = age.options[age.selectedIndex];
+ 
+    var step;
+    for (step = 18; step < 66; step++) {
+      let newOption = new Option(step, step);
+      age.append(newOption);
+    }
+
+
+</script>
+
+    </main>
+</body>
+
+</html>
