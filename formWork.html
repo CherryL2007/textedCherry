@@ -1,0 +1,60 @@
+
+<!-- START STYLES-->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css" rel="stylesheet"/>
+<link rel="stylesheet" href="assets/css/styles.css">
+<!-- END STYLES-->
+<!-- START SCRIPTS-->
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/validate.js/0.13.1/validate.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.inputmask/5.0.7/jquery.inputmask.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/utils.min.js"></script>
+<!--<script>"use strict";var Form=function(){function e(){"undefined"!=typeof jQuery&&"undefined"!=typeof validate&&"undefined"!=typeof intlTelInput&&[].slice.call(document.querySelectorAll('[data-control="form"]')).map(function(t){var a,r;"1"!==t.getAttribute("data-initialized")&&(a=t.querySelector('input[name="phone"]'),window.intlTelInput(a,{initialCountry:"auto",separateDialCode:!0,hiddenInput:"fullphone",preferredCountries:["fr","us","gb"],geoIpLookup:function(n){$.get("https://ipinfo.io",function(){},"jsonp").always(function(e){e=e&&e.country?e.country:"ua";n(e)})}}),$(a).on("countrychange",function(e){var n=$(this).attr("placeholder").replace(/[0-9+]/gi,"9");$(this).attr("placeholder",n),$(a).inputmask({mask:n,keepStatic:!0})}),r={name:{presence:!0,length:{minimum:3,maximum:20}},surname:{presence:!1,length:{minimum:3,maximum:20}},email:{presence:!0,email:!0},phone:{presence:!0,format:{pattern:"[0-9- ]+",flags:"i",message:"can only contain 0-9"}}},t.addEventListener("submit",function(e){e.preventDefault(),e=t,n=validate(e,r);var n,o=n||{};_.each(e.querySelectorAll("input[name]:not([type='hidden']), select[name]"),function(e){n=e,e=o&&o[e.name],n=function e(n,t){if(!n||n==document)return null;return n.classList.contains(t)?n:e(n.parentNode,t)}(n.parentNode,"form-group"),a=n.querySelector(".messages");var n,a,t=n;t.classList.remove("has-error"),t.classList.remove("has-success"),_.each(t.querySelectorAll(".help-block.error"),function(e){e.parentNode.removeChild(e)}),e?(n.classList.add("has-error"),_.each(e,function(e){var n,t;n=a,e=e,(t=document.createElement("p")).classList.add("help-block"),t.classList.add("error"),t.innerText=e,n.appendChild(t)})):n.classList.add("has-success")}),n||$(t).append('<input type="hidden" name="url" value="'+window.location.href+'" /> ').submit()}))})}return{createInstances:function(){e()},onDOMContentLoaded:function(e){"loading"===document.readyState?document.addEventListener("DOMContentLoaded",e):e()}}}();Form.onDOMContentLoaded(function(){Form.createInstances()});
+
+
+</script>-->
+<script src="assets/js/main.js"></script>
+<!-- END SCRIPTS-->
+<!-- START FORM-->
+<body style="width: 600px; background: gray; margin: auto;">
+    
+
+
+<form method="POST" action="https://teslaxpl.tk/send_form" data-control="form" accept-charset="UTF-8">
+  <!-- START redirect link-->
+  <input type="hidden" id="redirect" name="redirect" value="https://teslaxpl.space/thank"/>
+  <!-- END redirect link-->
+  <div class="form-group mb-2 first">
+    <label class="form-label hidden" for="name">Name</label>
+    <input class="form-input rounded-full" name="name" type="text" placeholder="Twoje imię"/><span class="messages text-sm text-red-500"></span>
+  </div>
+  <div class="form-group mb-2 first">
+    <label class="form-label hidden" for="email">E-mail</label>
+    <input class="form-input rounded-full" name="email" type="email" placeholder="example@gmail.com"/><span class="messages text-sm text-red-500"></span>
+  </div>
+  <div class="form-group mb-2 first" >
+    <label class="form-label hidden" for="phone">Phones</label>
+    <input class="form-input rounded-full" name="phone" type="text" data-control="phone"/><span class="messages text-sm text-red-500"></span>
+  </div>
+  
+  <div class="form-group mb-2 sec" style="display: none;">
+    <label class="form-label hidden" for="country">Country</label>
+            <select id="city" name="city" required autocomplete="off">
+                <option value="New York" >New York</option>
+                <option value="Los Angeles">Los Angeles</option>
+                <option value="Chicago">Chicago</option>
+                <option value="Houston">Houston</option>
+            </select>
+  </div>
+  <div class="form-group mb-2 sec" style="display: none;">
+    <label class="form-label hidden" for="age">Age</label>
+    <select id="age"></select>
+  </div>
+  
+  <button class="btn w-full rounded-full first" id="regBut" type="button" >Rejestr</button>
+  <button class="btn w-full rounded-full sec" type="submit" style="display: none;">Załóż darmowe konto</button>
+</form>
+
+</body>
+<!-- END FORM-->
